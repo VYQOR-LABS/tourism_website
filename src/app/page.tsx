@@ -59,22 +59,19 @@ export default function Home() {
               title="Explore Extraordinary Places"
               description="From the Indian Ocean coastline to the wild heart of Africa."
             />
-            <div className="mt-10 grid gap-6 lg:grid-cols-4">
-              <div className="lg:col-span-2">
-                <DestinationCard destination={featuredDestinations[0]} />
-              </div>
-              <div className="space-y-6 lg:col-span-2">
-                <div className="grid gap-6 sm:grid-cols-2">
-                  {featuredDestinations.slice(1, 3).map((destination) => (
-                    <DestinationCard key={destination.id} destination={destination} />
-                  ))}
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+              {featuredDestinations.slice(0, 5).map((destination, index) => (
+                <div
+                  key={destination.id}
+                  className={[
+                    "sm:col-span-1 lg:col-span-2",
+                    index === 3 ? "lg:col-start-2" : "",
+                    index === 4 ? "lg:col-start-4" : "",
+                  ].join(" ")}
+                >
+                  <DestinationCard destination={destination} />
                 </div>
-                <div className="grid gap-6 sm:grid-cols-2">
-                  {featuredDestinations.slice(3, 5).map((destination) => (
-                    <DestinationCard key={destination.id} destination={destination} />
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </Container>
         </section>

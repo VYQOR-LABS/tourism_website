@@ -7,6 +7,8 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   target?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -15,6 +17,8 @@ export default function Button({
   variant = "primary",
   className,
   target,
+  type = "button",
+  disabled = false,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive-500 focus-visible:ring-offset-2",
@@ -32,5 +36,5 @@ export default function Button({
     );
   }
 
-  return <button className={classes}>{children}</button>;
+  return <button type={type} disabled={disabled} className={cn(classes, disabled && "cursor-not-allowed opacity-60")}>{children}</button>;
 }

@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <main>
         <article>
           <div className="relative flex min-h-[440px] items-center justify-center text-center sm:min-h-[560px]">
-            <Image src={post.image} alt={post.title} fill className="object-cover" priority sizes="100vw" />
+            <Image src={post.image} alt={post.imageAlt} fill className="object-cover" priority sizes="100vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b1d1b]/85 via-[#0b1d1b]/55 to-[#0b1d1b]/30" />
             <Container className="relative py-24 text-white">
               <div className="mx-auto max-w-4xl">
@@ -50,11 +50,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </Container>
           </div>
 
-          <Container className="py-12">
-            <div className="mx-auto max-w-3xl">
-              <div className="mt-10 space-y-7 text-base leading-8 text-[#4d564f] sm:text-lg sm:leading-9">
+          <Container className="px-2 py-12 sm:px-4 lg:px-6">
+            <div className="w-full">
+              {post.imageCredit && (
+                <p className="text-right text-xs text-[#68736c]">
+                  {post.imageCreditUrl ? (
+                    <a href={post.imageCreditUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2">
+                      {post.imageCredit}
+                    </a>
+                  ) : post.imageCredit}
+                </p>
+              )}
+              <div className="mt-10 w-full text-base leading-8 text-[#4d564f] sm:text-lg sm:leading-9">
                 {post.content.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph} className="mb-7 break-inside-avoid">{paragraph}</p>
                 ))}
               </div>
             </div>

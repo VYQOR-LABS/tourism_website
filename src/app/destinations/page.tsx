@@ -36,12 +36,17 @@ export default function DestinationsPage() {
 
         <section className="py-20">
           <Container>
-            <SectionHeading title="Find the right destination for your next escape" description="Choose a region, travel style and pace that matches the kind of journey you want to have." />
+            <SectionHeading title="Find the right destination for your next escape" description="Choose a region, travel style and pace that matches the kind of journey you want to have. Indicative starting prices are shown in KES and should be confirmed before booking." />
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {destinations.map((destination) => (
                 <article key={destination.id} className="overflow-hidden rounded-[1.8rem] border border-[#ebdfd3] bg-white shadow-[0_14px_30px_rgba(16,28,25,0.06)]">
                   <div className="relative h-64">
-                    <Image src={destination.image} alt={destination.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                    <Image src={destination.image} alt={destination.imageAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                    {destination.imageCredit && destination.imageCreditUrl && (
+                      <a href={destination.imageCreditUrl} target="_blank" rel="noreferrer" className="absolute bottom-2 right-3 z-10 rounded bg-black/45 px-2 py-1 text-[10px] text-white/85 underline underline-offset-2">
+                        {destination.imageCredit}
+                      </a>
+                    )}
                   </div>
                   <div className="space-y-4 p-6">
                     <div className="flex items-center justify-between gap-3">

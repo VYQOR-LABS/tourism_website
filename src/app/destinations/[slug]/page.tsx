@@ -40,9 +40,14 @@ export default async function DestinationDetailPage({ params }: { params: Promis
       <main>
         <section className="relative flex min-h-[420px] items-center overflow-hidden sm:min-h-[500px]">
           <div className="absolute inset-0">
-            <Image src={destination.image} alt={destination.name} fill className="object-cover" priority sizes="100vw" />
+              <Image src={destination.image} alt={destination.imageAlt} fill className="object-cover" priority sizes="100vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0b1d1b]/85 via-[#0a1c1a]/60 to-[#0a1c1a]/20" />
           </div>
+              {destination.imageCredit && destination.imageCreditUrl && (
+                <a href={destination.imageCreditUrl} target="_blank" rel="noreferrer" className="absolute bottom-3 right-4 z-10 rounded bg-black/45 px-2 py-1 text-[10px] text-white/85 underline underline-offset-2">
+                  {destination.imageCredit}
+                </a>
+              )}
 
           <Container className="relative w-full py-24 text-center text-white">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e2f0eb]">{destination.region}</p>
@@ -59,9 +64,17 @@ export default async function DestinationDetailPage({ params }: { params: Promis
           <Container className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h2 className="font-serif text-4xl text-[#1b221e]">About {destination.name}</h2>
-              <p className="mt-4 text-base leading-8 text-[#4f5d59]">
-                {destination.description} This destination captures the spirit of East Africa through landscapes, communities and experiences that feel both premium and authentic.
-              </p>
+              <div className="mt-4 space-y-5 text-base leading-8 text-[#4f5d59]">
+                {destination.story ? destination.story.map((paragraph, index) => (
+                  <p key={paragraph} className={index === destination.story!.length - 1 ? "font-semibold text-[#173c36]" : undefined}>
+                    {paragraph}
+                  </p>
+                )) : (
+                  <p>
+                    {destination.description} This destination captures the spirit of East Africa through landscapes, communities and experiences that feel both premium and authentic.
+                  </p>
+                )}
+              </div>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[1.5rem] border border-[#e8dfd2] bg-[#fffdf9] p-5">
                   <p className="text-xs uppercase tracking-[0.2em] text-[#2d665d]">Ideal for</p>

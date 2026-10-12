@@ -30,25 +30,26 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-[#111b1a] text-[#edf2ee]">
+    <footer className="mt-20 bg-[linear-gradient(180deg,#5a3321_0%,#2d1a12_100%)] text-[#f7ebd2]">
       <Container className="py-16">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-primary)] text-sm font-semibold text-white">
-                S
-              </div>
+              <img
+                src="/safariman_logo.png"
+                alt="Safariman logo"
+                className="h-30 w-30 rounded-full object-cover ring-2 ring-[#f5d896]/70"
+              />
               <div>
-                <div className="text-sm font-semibold tracking-[0.24em] uppercase">Safari</div>
-                <div className="text-[10px] uppercase tracking-[0.38em] text-white/70">Beyond</div>
+                <div className="text-base font-semibold tracking-[0.24em] uppercase text-[#f5d896]">Safariman</div>
               </div>
             </div>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/70">
+            <p className="mt-5 max-w-sm text-[0.95rem] leading-7 text-[#f7ebd2]/80">
               Thoughtful journeys across East Africa, designed around immersive experiences, local expertise and memorable travel.
             </p>
             <div className="mt-6 flex gap-3">
               {socials.map(({ icon: Icon, label, href }) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/75 transition hover:border-white/40 hover:text-white">
+                <a key={label} href={href} target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d4a75f]/40 text-[#f3dca2] transition hover:border-[#f3dca2]/80 hover:text-[#fff3d2]">
                   <Icon size={16} />
                 </a>
               ))}
@@ -56,33 +57,32 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-white/90">Navigation</h3>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
+            <h3 className="text-base font-semibold uppercase tracking-[0.22em] text-[#f3dca2]">Navigation</h3>
+            <ul className="mt-5 space-y-3 text-[0.95rem] text-[#f7ebd2]/80">
               {footerLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="transition hover:text-white">{item.label}</Link>
+                  <Link href={item.href} className="transition hover:text-[#fff3d2]">{item.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-white/90">Support</h3>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
+            <h3 className="text-base font-semibold uppercase tracking-[0.22em] text-[#f3dca2]">Support</h3>
+            <ul className="mt-5 space-y-3 text-[0.95rem] text-[#f7ebd2]/80">
               {supportLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="transition hover:text-white">{item.label}</Link>
+                  <Link href={item.href} className="transition hover:text-[#fff3d2]">{item.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-white/90">Contact</h3>
-            <div className="mt-5 space-y-3 text-sm text-white/70">
-              <p><a href="tel:+254791614036" className="transition-colors hover:text-white">0791614036</a></p>
-              <p><a href="mailto:wilfred@vyqor.co.ke" className="transition-colors hover:text-white">wilfred@vyqor.co.ke</a></p>
-              <p>Mombasa, Kenya</p>
+            <h3 className="text-base font-semibold uppercase tracking-[0.22em] text-[#f3dca2]">Contact</h3>
+            <div className="mt-5 space-y-3 text-[0.95rem] text-[#f7ebd2]/80">
+              <p><a href="tel:+254733349711" className="transition-colors hover:text-[#fff3d2]">+254 733-349-711</a></p>
+              <p><a href="mailto:info@safariman.co.ke" className="transition-colors hover:text-[#fff3d2]">info@safariman.co.ke</a></p>
             </div>
             <div className="mt-6">
               <Button href="/booking" className="w-full justify-center" variant="primary">Plan Your Trip</Button>
@@ -90,13 +90,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Safari &amp; Beyond. All rights reserved.</p>
+        <div className="mt-12 flex flex-col gap-3 border-t border-[#d4a75f]/20 pt-6 text-[0.95rem] text-[#f3e2ba]/75 sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 Safariman. All rights reserved.</p>
           <a
             href="https://vyqor.co.ke"
             target="_blank"
             rel="noreferrer"
-            className="transition-colors hover:text-white"
+            className="transition-colors hover:text-[#fff3d2]"
           >
             Powered by VYQOR LABS
           </a>

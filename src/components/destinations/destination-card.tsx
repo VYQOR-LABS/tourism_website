@@ -2,19 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Destination } from "@/types/tourism";
+import { formatCurrency } from "@/lib/utils";
 
 export default function DestinationCard({ destination }: { destination: Destination }) {
   return (
     <article className="group overflow-hidden rounded-[1.75rem] border border-[#ece3d6] bg-white shadow-[0_15px_35px_rgba(28,35,31,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(28,35,31,0.12)]">
       <div className="relative h-72 overflow-hidden">
         <Image
-          src={destination.image}
-          alt={destination.name}
+            src={destination.image}
+            alt={destination.imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover transition duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#122320]/80 via-[#122320]/15 to-transparent" />
+          {destination.imageCredit && destination.imageCreditUrl && (
+            <a href={destination.imageCreditUrl} target="_blank" rel="noreferrer" className="absolute bottom-2 right-3 z-10 rounded bg-black/45 px-2 py-1 text-[10px] text-white/85 underline underline-offset-2">
+              {destination.imageCredit}
+            </a>
+          )}
       </div>
 
       <div className="space-y-4 p-6">
@@ -31,7 +37,7 @@ export default function DestinationCard({ destination }: { destination: Destinat
         <p className="text-sm leading-7 text-[#4d564f]">{destination.description}</p>
 
         <div className="flex items-center justify-between pt-1">
-          <span className="text-sm font-medium text-[#536b61]">From ${destination.priceFrom}</span>
+          <span className="text-sm font-medium text-[#536b61]">From {formatCurrency(destination.priceFrom)}</span>
           <Link href={`/destinations/${destination.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#173c36]">
             Explore <ArrowRight size={15} />
           </Link>

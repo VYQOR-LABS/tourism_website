@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Dancing_Script, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,8 +13,13 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
+const dancingScript = Dancing_Script({
+  variable: "--font-script",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Safari & Beyond | Sample Tourism Website",
+  title: "Safariman | Tourism Website",
   description:
     "Premium East Africa travel experiences with safari, beach escapes, culture and adventure tours.",
   metadataBase: new URL("https://example.com"),
@@ -22,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${inter.variable} ${cormorant.variable} ${dancingScript.variable}`}>
       <body>{children}</body>
     </html>
   );

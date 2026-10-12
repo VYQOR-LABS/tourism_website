@@ -21,22 +21,14 @@ const navItems = [
 
 function LogoMark({ solid }: { solid: boolean }) {
   return (
-    <svg
-      viewBox="0 0 36 36"
+    <img
+      src="/safariman_logo.png"
+      alt="Safariman logo"
       className={[
-        "h-9 w-9 transition-colors duration-500",
-        solid ? "text-[#173d37]" : "text-white",
+        "h-20 w-20 rounded-full object-cover ring-2 transition-colors duration-500",
+        solid ? "ring-[#b08d57]/80" : "ring-[#f5d896]/70",
       ].join(" ")}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      aria-hidden="true"
-    >
-      <circle cx="18" cy="18" r="16.5" />
-      <path d="M8 22h20" strokeLinecap="round" />
-      <path d="M12.5 22a5.5 5.5 0 0 1 11 0" strokeLinecap="round" />
-      <path d="M11 26.5h14" strokeLinecap="round" opacity="0.55" />
-    </svg>
+    />
   );
 }
 
@@ -105,7 +97,7 @@ export default function SiteHeader() {
         className={[
           "sticky top-0 z-50 transition-[transform,background-color,box-shadow,border-color] duration-500 ease-out motion-reduce:transition-none",
           isHidden ? "-translate-y-full" : "translate-y-0",
-          "border-b border-white/10 bg-[#102521] shadow-[0_8px_30px_rgba(8,20,18,0.2)]",
+          "border-b border-[#5a3321]/40 bg-[linear-gradient(180deg,#5a3321_0%,#2d1a12_100%)] shadow-[0_8px_30px_rgba(35,17,9,0.28)]",
         ].join(" ")}
       >
         <Container>
@@ -118,7 +110,7 @@ export default function SiteHeader() {
           >
             <Link
               href="/"
-              aria-label="Safari Beyond home page"
+              aria-label="Safariman home page"
               className="group flex items-center gap-3 rounded outline-none focus-visible:ring-2 focus-visible:ring-[#b08d57] focus-visible:ring-offset-2"
             >
               <span className="transition-transform duration-700 ease-out group-hover:rotate-[12deg] motion-reduce:transform-none">
@@ -126,11 +118,11 @@ export default function SiteHeader() {
               </span>
               <span
                 className={[
-                  "font-serif text-xl tracking-wide transition-colors duration-500",
-                  "text-white",
+                  "font-serif text-2xl tracking-[0.12em] transition-colors duration-500",
+                  "text-[#f5d896]",
                 ].join(" ")}
               >
-                Safari Beyond
+                SAFARIMAN
               </span>
             </Link>
 
@@ -143,9 +135,9 @@ export default function SiteHeader() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={[
-                        "group relative block py-2 text-[0.9rem] font-medium outline-none transition-colors duration-300",
+                        "group relative block py-2 text-base font-medium outline-none transition-colors duration-300",
                         "focus-visible:ring-2 focus-visible:ring-[#b08d57] focus-visible:ring-offset-2 rounded",
-                        active ? "text-white" : "text-white/80 hover:text-white",
+                        active ? "text-[#fff3d2]" : "text-[#f7ebd2]/80 hover:text-[#fff3d2]",
                       ].join(" ")}
                     >
                       {item.label}
@@ -164,7 +156,7 @@ export default function SiteHeader() {
 
             <div className="flex items-center gap-3">
               <div className="hidden xl:block">
-                <Button href="/booking" variant="secondary" className="!rounded-full">
+                <Button href="/booking" variant="secondary" className="!rounded-full !text-base">
                   Plan Your Trip
                 </Button>
               </div>
@@ -178,7 +170,7 @@ export default function SiteHeader() {
                 className={[
                   "relative flex h-11 w-11 items-center justify-center rounded-full border outline-none transition-colors duration-300 xl:hidden",
                   "focus-visible:ring-2 focus-visible:ring-[#b08d57] focus-visible:ring-offset-2",
-                  "border-white/30 text-white hover:bg-white/10",
+                  "border-[#f5d896]/40 text-[#f5d896] hover:bg-[#f5d896]/10",
                 ].join(" ")}
               >
                 <Menu
@@ -243,7 +235,7 @@ export default function SiteHeader() {
                   aria-current={active ? "page" : undefined}
                   onClick={() => setIsOpen(false)}
                   className={[
-                    "flex items-center justify-between py-4 font-serif text-2xl outline-none transition-colors",
+                    "flex items-center justify-between py-4 font-serif text-3xl outline-none transition-colors",
                     "focus-visible:text-[#b08d57]",
                     active ? "text-[#173d37]" : "text-[#3b4f4b] hover:text-[#173d37]",
                   ].join(" ")}
@@ -263,7 +255,7 @@ export default function SiteHeader() {
           ].join(" ")}
           style={{ transitionDelay: isOpen ? `${120 + navItems.length * 45}ms` : "0ms" }}
         >
-          <Button href="/booking" variant="primary" className="w-full justify-center">
+          <Button href="/booking" variant="primary" className="w-full justify-center !text-base">
             Plan Your Trip
           </Button>
         </div>

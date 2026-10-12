@@ -55,10 +55,10 @@ export default function InquiryForm() {
         <label className="block text-sm font-medium text-[#2c3934]">
           Budget range
           <select name="budget" className="mt-2 w-full rounded-2xl border border-[#e4d7c0] bg-white px-4 py-3 outline-none">
-            <option>$500 - $1,000</option>
-            <option>$1,000 - $2,000</option>
-            <option>$2,000 - $4,000</option>
-            <option>$4,000+</option>
+            <option>KES 65,000 - KES 130,000</option>
+            <option>KES 130,000 - KES 260,000</option>
+            <option>KES 260,000 - KES 520,000</option>
+            <option>KES 520,000+</option>
           </select>
         </label>
       </div>

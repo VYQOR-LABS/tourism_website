@@ -4,6 +4,7 @@ import PageHero from "@/components/hero/page-hero";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import { accommodation } from "@/data/accommodation";
+import { formatCurrency } from "@/lib/utils";
 
 export default function AccommodationPage() {
   return (
@@ -13,7 +14,7 @@ export default function AccommodationPage() {
         <PageHero
           eyebrow="Rest well, travel deeper"
           title="Stay in places that feel as memorable as the journey"
-          description="Explore sample lodges, villas and boutique stays across East Africa."
+          description="Explore sample lodges, villas and boutique stays across East Africa. Prices are indicative and subject to confirmation."
           image={accommodation[0].image}
           imageAlt={accommodation[0].name}
         />
@@ -37,7 +38,7 @@ export default function AccommodationPage() {
                       <span key={feature} className="rounded-full bg-[#edf3ef] px-2.5 py-1 text-xs text-[#23493e]">{feature}</span>
                     ))}
                   </div>
-                  <p className="text-sm font-semibold text-[#173c36]">From ${stay.priceFrom}/night</p>
+                  <p className="text-sm font-semibold text-[#173c36]">Indicative from {formatCurrency(stay.priceFrom)}/night</p>
                 </div>
               </article>
             ))}

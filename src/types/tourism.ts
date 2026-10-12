@@ -5,7 +5,11 @@ export interface Destination {
   country: string;
   region: string;
   description: string;
+  story: string[];
   image: string;
+  imageAlt: string;
+  imageCredit?: string;
+  imageCreditUrl?: string;
   activities: string[];
   bestTime: string;
   averageStay: string;
@@ -22,12 +26,13 @@ export interface TourPackage {
   duration: string;
   price: number;
   image: string;
+  imageAlt: string;
   description: string;
   highlights: string[];
   category: string;
-  rating: number;
   featured?: boolean;
   summary: string;
+  story: string[];
   itinerary: string[];
   included: string[];
   notIncluded: string[];
@@ -66,8 +71,9 @@ export interface GalleryImage {
 
 export interface Testimonial {
   id: string;
+  title: string;
   name: string;
-  country: string;
+  date: string;
   quote: string;
   avatar: string;
 }
@@ -79,6 +85,9 @@ export interface BlogPost {
   excerpt: string;
   category: string;
   image: string;
+  imageAlt: string;
+  imageCredit?: string;
+  imageCreditUrl?: string;
   readTime: string;
   date: string;
   author: string;

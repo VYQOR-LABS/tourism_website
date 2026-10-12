@@ -2,7 +2,7 @@ export default function SectionHeading({
   eyebrow,
   title,
   description,
-  align = "left",
+  align = "center",
   tone = "default",
 }: {
   eyebrow?: string;
@@ -18,7 +18,7 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={`font-serif text-3xl leading-tight sm:text-4xl ${tone === "light" ? "text-white" : "text-[#1a1d1a]"}`}>{title}</h2>
+      <h2 className={`font-serif text-3xl font-bold leading-tight sm:text-4xl ${tone === "light" ? "text-white" : "text-[#1a1d1a]"}`}>{title}</h2>
       {description ? <p className={`mt-4 text-base leading-7 ${tone === "light" ? "text-white/75" : "text-[#4d564f]"}`}>{description}</p> : null}
     </div>
   );

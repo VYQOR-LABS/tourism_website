@@ -7,7 +7,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
   return (
     <article className="overflow-hidden rounded-[1.7rem] border border-[#ece4d9] bg-white shadow-[0_10px_28px_rgba(16,30,26,0.05)]">
       <div className="relative h-56">
-        <Image src={post.image} alt={post.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+        <Image src={post.image} alt={post.imageAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
       </div>
       <div className="p-6">
         <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-[#587169]">

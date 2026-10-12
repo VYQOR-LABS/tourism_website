@@ -9,7 +9,7 @@ import SectionHeading from "@/components/ui/section-heading";
 import DestinationCard from "@/components/destinations/destination-card";
 import ExperienceCard from "@/components/experiences/experience-card";
 import TourCard from "@/components/tours/tour-card";
-import TestimonialCard from "@/components/testimonials/testimonial-card";
+import TestimonialsCarousel from "@/components/testimonials/testimonials-carousel";
 import BlogCard from "@/components/blog/blog-card";
 import Newsletter from "@/components/newsletter/newsletter";
 import Footer from "@/components/footer";
@@ -18,7 +18,6 @@ import WhatsAppButton from "@/components/whatsapp-button";
 import { featuredDestinations } from "@/data/destinations";
 import { experiences } from "@/data/experiences";
 import { tours } from "@/data/tours";
-import { testimonials } from "@/data/testimonials";
 import { blogPosts } from "@/data/blog";
 
 const trustFeatures = [
@@ -108,7 +107,7 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="bg-[#102521] py-20 text-white">
+        <section className="bg-white py-20">
           <Container>
             <SectionHeading eyebrow="Popular journeys" title="Popular Journeys" description="Sample packages designed to inspire your next unforgettable trip." />
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -153,16 +152,7 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="py-20">
-          <Container>
-            <SectionHeading eyebrow="Stories from our travelers" title="Stories From Our Travelers" align="center" />
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {testimonials.map((testimonial) => (
-                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-              ))}
-            </div>
-          </Container>
-        </section>
+        <TestimonialsCarousel />
 
         <section className="bg-[#f5f0e9] py-20">
           <Container>

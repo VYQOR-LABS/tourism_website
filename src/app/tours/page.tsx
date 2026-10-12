@@ -25,7 +25,7 @@ export default function ToursPage() {
 
         <section className="py-20">
           <Container>
-            <SectionHeading title="Browse handpicked experiences" description="Choose from safari, beach, culture and adventure itineraries crafted for memorable travel." />
+            <SectionHeading title="Browse handpicked experiences" description="Explore sample safari, beach, culture and adventure itineraries. Prices and arrangements are indicative and must be confirmed with the operator." />
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
               {tours.map((tour) => (
                 <TourCard key={tour.id} tour={tour} />

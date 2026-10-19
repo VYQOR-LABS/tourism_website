@@ -19,13 +19,13 @@ export default function ToursPage() {
           <Container className="relative w-full py-24 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e2efe8]">Curated journeys</p>
             <h1 className="mx-auto mt-6 max-w-3xl font-serif text-5xl leading-none sm:text-6xl">Explore Tour Packages</h1>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-white/75">Travel styles designed for wildlife, beaches, culture, luxury and meaningful discovery.</p>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-white/75">Safariman Expeditions plans wildlife, beach and culture journeys across Kenya, Tanzania, Rwanda and Uganda.</p>
           </Container>
         </section>
 
         <section className="py-20">
           <Container>
-            <SectionHeading title="Browse handpicked experiences" description="Explore sample safari, beach, culture and adventure itineraries. Prices and arrangements are indicative and must be confirmed with the operator." />
+            <SectionHeading title="Browse tours across four countries" description="Choose a sample safari, beach, culture or adventure itinerary in Kenya, Tanzania, Rwanda or Uganda. Prices and arrangements are indicative and must be confirmed with the operator." />
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
               {tours.map((tour) => (
                 <TourCard key={tour.id} tour={tour} />

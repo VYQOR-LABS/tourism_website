@@ -5,17 +5,39 @@ import Image from "next/image";
 import { galleryImages } from "@/data/gallery";
 
 const filters = ["All", "Safari", "Beach", "Culture", "Adventure", "Accommodation", "Food", "Nature"] as const;
+const countries = ["All countries", "Kenya", "Tanzania", "Rwanda", "Uganda"] as const;
 
 export default function GalleryGrid() {
   const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>("All");
+  const [activeCountry, setActiveCountry] = useState<(typeof countries)[number]>("All countries");
 
   const items = useMemo(() => {
-    if (activeFilter === "All") return galleryImages;
-    return galleryImages.filter((image) => image.category === activeFilter);
-  }, [activeFilter]);
+    return galleryImages.filter((image) =>
+      (activeFilter === "All" || image.category === activeFilter)
+      && (activeCountry === "All countries" || image.country === activeCountry),
+    );
+  }, [activeCountry, activeFilter]);
 
   return (
     <div>
+      <div className="mb-4 flex flex-wrap gap-2" aria-label="Filter gallery by country">
+        {countries.map((country) => (
+          <button
+            key={country}
+            type="button"
+            onClick={() => setActiveCountry(country)}
+            aria-pressed={activeCountry === country}
+            className={[
+              "rounded-full border px-4 py-2 text-sm font-semibold transition",
+              activeCountry === country
+                ? "border-[#173c36] bg-[#173c36] text-white"
+                : "border-[#d8ddd7] bg-white text-[#263c35] hover:border-[#173c36]",
+            ].join(" ")}
+          >
+            {country}
+          </button>
+        ))}
+      </div>
       <div className="mb-8 flex flex-wrap gap-3">
         {filters.map((filter) => (
           <button
@@ -46,6 +68,10 @@ export default function GalleryGrid() {
                 className="object-cover transition duration-500 group-hover:scale-105"
               />
             </div>
+            <figcaption className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
+              <span className="font-medium text-[#26332f]">{image.title}</span>
+              <span className="shrink-0 text-xs font-semibold uppercase tracking-wide text-[#41665b]">{image.country}</span>
+            </figcaption>
           </figure>
         ))}
       </div>

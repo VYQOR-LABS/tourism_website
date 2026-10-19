@@ -16,11 +16,6 @@ export default function DestinationCard({ destination }: { destination: Destinat
           className="object-cover transition duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#122320]/80 via-[#122320]/15 to-transparent" />
-          {destination.imageCredit && destination.imageCreditUrl && (
-            <a href={destination.imageCreditUrl} target="_blank" rel="noreferrer" className="absolute bottom-2 right-3 z-10 rounded bg-black/45 px-2 py-1 text-[10px] text-white/85 underline underline-offset-2">
-              {destination.imageCredit}
-            </a>
-          )}
       </div>
 
       <div className="space-y-4 p-6">

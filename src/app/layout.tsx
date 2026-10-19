@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   description:
     "Premium East Africa travel experiences with safari, beach escapes, culture and adventure tours.",
   metadataBase: new URL("https://example.com"),
+  icons: {
+    icon: "/safariman_logo.png",
+    shortcut: "/safariman_logo.png",
+    apple: "/safariman_logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -2,87 +2,87 @@ import type { GalleryImage } from "@/types/tourism";
 
 export const galleryImages: GalleryImage[] = [
   {
-    id: "1",
-    title: "Savannah sunset",
+    id: "kenya-mara",
+    title: "Maasai Mara, Kenya",
     category: "Safari",
-    image:
-      "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1200&q=80",
+    country: "Kenya",
+    image: "/maasai-mara-acacia.jpg",
   },
   {
-    id: "2",
-    title: "Ocean breeze",
-    category: "Beach",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "3",
-    title: "Coastal market",
-    category: "Culture",
-    image:
-      "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "4",
-    title: "Cliffside adventure",
-    category: "Adventure",
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "5",
-    title: "Luxury resort",
-    category: "Accommodation",
-    image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "6",
-    title: "Fresh local flavors",
-    category: "Food",
-    image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "7",
-    title: "Wild landscape",
+    id: "kenya-amboseli",
+    title: "Amboseli, Kenya",
     category: "Nature",
-    image:
-      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80",
+    country: "Kenya",
+    image: "/amboseli-elephants-kilimanjaro.jpg",
   },
   {
-    id: "8",
-    title: "Beach arrival",
+    id: "kenya-diani",
+    title: "Diani Beach, Kenya",
     category: "Beach",
-    image:
-      "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80",
+    country: "Kenya",
+    image: "/diani-beach.jpg",
   },
   {
-    id: "9",
-    title: "Safari vehicle",
+    id: "tanzania-serengeti",
+    title: "Serengeti, Tanzania",
     category: "Safari",
-    image:
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80",
+    country: "Tanzania",
+    image: "/serengeti-sunrise.jpg",
   },
   {
-    id: "10",
-    title: "Cultural rhythm",
+    id: "tanzania-zanzibar",
+    title: "Stone Town, Zanzibar",
+    category: "Beach",
+    country: "Tanzania",
+    image: "/zanzibar-stone-town-harbour.jpg",
+  },
+  {
+    id: "tanzania-arusha",
+    title: "Arusha, Tanzania",
     category: "Culture",
-    image:
-      "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80",
+    country: "Tanzania",
+    image: "/arusha-city.jpg",
   },
   {
-    id: "11",
-    title: "Boat trip",
-    category: "Adventure",
-    image:
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "12",
-    title: "Forest retreat",
+    id: "uganda-bwindi",
+    title: "Mountain gorillas, Bwindi",
     category: "Nature",
-    image:
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    country: "Uganda",
+    image: "/bwindi-mountain-gorilla.jpg",
+  },
+  {
+    id: "uganda-queen-elizabeth",
+    title: "Kazinga Channel, Uganda",
+    category: "Safari",
+    country: "Uganda",
+    image: "/queen-elizabeth-kazinga-hippos.jpg",
+  },
+  {
+    id: "uganda-murchison-falls",
+    title: "Murchison Falls, Uganda",
+    category: "Nature",
+    country: "Uganda",
+    image: "/murchison-falls-uganda.jpg",
+  },
+  {
+    id: "rwanda-volcanoes",
+    title: "Volcanoes National Park, Rwanda",
+    category: "Adventure",
+    country: "Rwanda",
+    image: "/volcanoes-rwanda-gorilla.jpg",
+  },
+  {
+    id: "rwanda-akagera",
+    title: "Akagera National Park, Rwanda",
+    category: "Safari",
+    country: "Rwanda",
+    image: "/akagera-elephant.jpg",
+  },
+  {
+    id: "rwanda-sabyinyo",
+    title: "Mount Sabyinyo, Rwanda",
+    category: "Adventure",
+    country: "Rwanda",
+    image: "/mount-sabyinyo-rwanda.jpg",
   },
 ];

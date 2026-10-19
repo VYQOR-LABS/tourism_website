@@ -13,7 +13,7 @@ export default function ExperiencesPage() {
         <PageHero
           eyebrow="Make the journey yours"
           title="Crafted experiences for every kind of traveler"
-          description="Explore safaris, beaches, culture and adventure experiences that bring East Africa to life."
+          description="Explore safaris, beaches, culture and adventure across Kenya, Tanzania, Rwanda and Uganda."
           image={experiences[0].image}
           imageAlt={experiences[0].title}
         />
@@ -27,6 +27,7 @@ export default function ExperiencesPage() {
                 </div>
                 <div className="p-6">
                   <span className="rounded-full bg-[#edf3ef] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1b4d43]">{experience.category}</span>
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-[#41665b]">Tours in {experience.countries.join(" · ")}</p>
                   <h3 className="mt-5 font-serif text-3xl text-[#1d241f]">{experience.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-[#4d564f]">{experience.description}</p>
                 </div>

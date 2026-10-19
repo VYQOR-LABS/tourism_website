@@ -1,7 +1,52 @@
 import Link from "next/link";
-import { Camera, Globe, Music2, Play, MessageCircle } from "lucide-react";
 import Container from "@/components/ui/container";
 import Button from "@/components/ui/button";
+
+function SocialIcon({ type }: { type: "facebook" | "x" | "instagram" | "tripadvisor" }) {
+  const commonProps = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    className: "h-5 w-5",
+    "aria-hidden": true,
+  };
+
+  switch (type) {
+    case "facebook":
+      return (
+        <svg {...commonProps}>
+          <path d="M14 8h2V4h-2a4 4 0 0 0-4 4v2H8v4h2v6h4v-6h2.5l.5-4H14V8Z" />
+        </svg>
+      );
+    case "x":
+      return (
+        <svg {...commonProps}>
+          <path d="M5 5l14 14M19 5L5 19" />
+        </svg>
+      );
+    case "instagram":
+      return (
+        <svg {...commonProps}>
+          <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "tripadvisor":
+      return (
+        <svg {...commonProps}>
+          <path d="M7 9.5A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 5 5.5" />
+          <path d="M5.5 13.5c1.5 1.7 3.7 2.7 6.5 2.7s5-1 6.5-2.7" />
+          <path d="M9 15.5l1 4 2-3 2 3 1-4" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
 
 const footerLinks = [
   { label: "Destinations", href: "/destinations" },
@@ -20,12 +65,11 @@ const supportLinks = [
   { label: "Terms", href: "/terms" },
 ];
 
-const socials = [
-  { icon: Camera, label: "Instagram", href: "https://instagram.com" },
-  { icon: Globe, label: "Facebook", href: "https://facebook.com" },
-  { icon: Music2, label: "TikTok", href: "https://tiktok.com" },
-  { icon: Play, label: "YouTube", href: "https://youtube.com" },
-  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/254791614036?text=Hello%2C%20I%20would%20like%20to%20plan%20a%20trip." },
+const socials: Array<{ icon: "facebook" | "x" | "instagram" | "tripadvisor"; label: string; href: string }> = [
+  { icon: "facebook", label: "Facebook", href: "https://web.facebook.com/SafarimanExped/" },
+  { icon: "x", label: "X", href: "https://x.com/safariman007" },
+  { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/safariman_expeditions/" },
+  { icon: "tripadvisor", label: "TripAdvisor", href: "https://www.tripadvisor.com/Attraction_Review-g294207-d13951657-Reviews-Safariman_Expeditions-Nairobi.html" },
 ];
 
 export default function Footer() {
@@ -48,9 +92,9 @@ export default function Footer() {
               Thoughtful journeys across East Africa, designed around immersive experiences, local expertise and memorable travel.
             </p>
             <div className="mt-6 flex gap-3">
-              {socials.map(({ icon: Icon, label, href }) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d4a75f]/40 text-[#f3dca2] transition hover:border-[#f3dca2]/80 hover:text-[#fff3d2]">
-                  <Icon size={16} />
+              {socials.map(({ icon, label, href }) => (
+                <a key={label} href={href} target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d4a75f]/40 text-[#f3dca2] transition hover:border-[#f3dca2]/80 hover:text-[#fff3d2]">
+                  <SocialIcon type={icon} />
                 </a>
               ))}
             </div>

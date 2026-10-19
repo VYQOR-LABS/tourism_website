@@ -14,7 +14,7 @@ export default function AccommodationPage() {
         <PageHero
           eyebrow="Rest well, travel deeper"
           title="Stay in places that feel as memorable as the journey"
-          description="Explore sample lodges, villas and boutique stays across East Africa. Prices are indicative and subject to confirmation."
+          description="Explore sample lodges and coastal stays in Kenya, Tanzania, Rwanda and Uganda. Prices and availability are indicative and subject to confirmation."
           image={accommodation[0].image}
           imageAlt={accommodation[0].name}
         />

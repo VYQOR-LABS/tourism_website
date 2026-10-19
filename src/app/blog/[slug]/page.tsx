@@ -52,15 +52,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <Container className="px-2 py-12 sm:px-4 lg:px-6">
             <div className="w-full">
-              {post.imageCredit && (
-                <p className="text-right text-xs text-[#68736c]">
-                  {post.imageCreditUrl ? (
-                    <a href={post.imageCreditUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2">
-                      {post.imageCredit}
-                    </a>
-                  ) : post.imageCredit}
-                </p>
-              )}
               <div className="mt-10 w-full text-base leading-8 text-[#4d564f] sm:text-lg sm:leading-9">
                 {post.content.map((paragraph) => (
                   <p key={paragraph} className="mb-7 break-inside-avoid">{paragraph}</p>

@@ -13,7 +13,7 @@ export default function BlogPage() {
         <PageHero
           eyebrow="Field notes & inspiration"
           title="Travel inspiration and practical planning ideas"
-          description="Explore concise guides, seasonal advice and useful insights for your next East Africa trip."
+          description="Explore destination guides, seasonal advice and trip-planning insights for Kenya, Tanzania, Rwanda and Uganda."
           image={blogPosts[0].image}
           imageAlt={blogPosts[0].title}
         />

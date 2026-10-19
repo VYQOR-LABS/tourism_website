@@ -17,7 +17,7 @@ export default function TourCard({ tour }: { tour: TourPackage }) {
 
       <div className="space-y-4 p-5">
         <div className="flex items-center text-sm text-[#567066]">
-          <span className="flex items-center gap-2"><MapPin size={14} /> {tour.destination}</span>
+          <span className="flex items-center gap-2"><MapPin size={14} /> {tour.destination}, {tour.region}</span>
         </div>
 
         <div>

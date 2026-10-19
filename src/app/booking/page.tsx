@@ -12,7 +12,7 @@ export default function BookingPage() {
         <section className="relative flex min-h-[420px] items-center overflow-hidden sm:min-h-[500px]">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
+              src="/images/booking-hero.svg"
               alt="Coastal travel destination"
               fill
               priority

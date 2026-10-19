@@ -17,8 +17,8 @@ import GalleryGrid from "@/components/gallery/gallery-grid";
 import WhatsAppButton from "@/components/whatsapp-button";
 import { featuredDestinations } from "@/data/destinations";
 import { experiences } from "@/data/experiences";
-import { tours } from "@/data/tours";
-import { blogPosts } from "@/data/blog";
+import { featuredTours } from "@/data/tours";
+import { featuredBlogPosts } from "@/data/blog";
 
 const trustFeatures = [
   {
@@ -54,20 +54,13 @@ export default function Home() {
         <section className="pb-20 pt-20">
           <Container>
             <SectionHeading
-              eyebrow="Explore extraordinary places"
-              title="Explore Extraordinary Places"
-              description="From the Indian Ocean coastline to the wild heart of Africa."
+              eyebrow="Four countries, one region"
+              title="Explore East Africa with Safariman"
+              description="Safariman Expeditions offers tours in Kenya, Tanzania, Rwanda and Uganda, from savannah safaris to island escapes and mountain gorilla trekking."
             />
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
-              {featuredDestinations.slice(0, 5).map((destination, index) => (
-                <div
-                  key={destination.id}
-                  className={[
-                    "sm:col-span-1 lg:col-span-2",
-                    index === 3 ? "lg:col-start-2" : "",
-                    index === 4 ? "lg:col-start-4" : "",
-                  ].join(" ")}
-                >
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+              {featuredDestinations.map((destination) => (
+                <div key={destination.id}>
                   <DestinationCard destination={destination} />
                 </div>
               ))}
@@ -80,7 +73,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Experience more than a destination"
               title="Experience More Than a Destination"
-              description="Create memorable travel stories through landscapes, people and moments that stay with you."
+              description="Choose wildlife, coast, culture and adventure experiences across Kenya, Tanzania, Rwanda and Uganda."
             />
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
               {experiences.map((experience) => (
@@ -109,9 +102,9 @@ export default function Home() {
 
         <section className="bg-white py-20">
           <Container>
-            <SectionHeading eyebrow="Popular journeys" title="Popular Journeys" description="Sample packages designed to inspire your next unforgettable trip." />
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {tours.slice(0, 6).map((tour) => (
+            <SectionHeading eyebrow="Popular journeys in four countries" title="Tours Across East Africa" description="Explore curated sample tours in Kenya, Tanzania, Rwanda and Uganda. Each itinerary is a starting point for a trip tailored to you." />
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {featuredTours.map((tour) => (
                 <TourCard key={tour.id} tour={tour} />
               ))}
             </div>
@@ -145,7 +138,7 @@ export default function Home() {
 
         <section className="bg-[#f5f0e9] py-20">
           <Container>
-            <SectionHeading eyebrow="Gallery" title="A Visual Story of East Africa" description="Browse extraordinary beaches, wildlife, landscapes and stay experiences." align="center" />
+            <SectionHeading eyebrow="Gallery" title="A Visual Story of East Africa" description="Explore real destination highlights from Kenya, Tanzania, Rwanda and Uganda." align="center" />
             <div className="mt-10">
               <GalleryGrid />
             </div>
@@ -156,9 +149,9 @@ export default function Home() {
 
         <section className="bg-[#f5f0e9] py-20">
           <Container>
-            <SectionHeading eyebrow="Travel inspiration" title="Travel Inspiration" description="Articles to help you plan smarter, travel deeper and enjoy every step of the journey." />
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {blogPosts.map((post) => (
+            <SectionHeading eyebrow="Travel inspiration across four countries" title="Travel Inspiration" description="Plan for Kenya, Tanzania, Rwanda and Uganda with destination guides and practical advice." />
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {featuredBlogPosts.map((post) => (
                 <BlogCard key={post.id} post={post} />
               ))}
             </div>

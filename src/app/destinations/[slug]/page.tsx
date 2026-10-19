@@ -43,11 +43,6 @@ export default async function DestinationDetailPage({ params }: { params: Promis
               <Image src={destination.image} alt={destination.imageAlt} fill className="object-cover" priority sizes="100vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0b1d1b]/85 via-[#0a1c1a]/60 to-[#0a1c1a]/20" />
           </div>
-              {destination.imageCredit && destination.imageCreditUrl && (
-                <a href={destination.imageCreditUrl} target="_blank" rel="noreferrer" className="absolute bottom-3 right-4 z-10 rounded bg-black/45 px-2 py-1 text-[10px] text-white/85 underline underline-offset-2">
-                  {destination.imageCredit}
-                </a>
-              )}
 
           <Container className="relative w-full py-24 text-center text-white">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e2f0eb]">{destination.region}</p>
@@ -61,7 +56,7 @@ export default async function DestinationDetailPage({ params }: { params: Promis
         </section>
 
         <section className="py-20">
-          <Container className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <Container className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <h2 className="font-serif text-4xl text-[#1b221e]">About {destination.name}</h2>
               <div className="mt-4 space-y-5 text-base leading-8 text-[#4f5d59]">
@@ -95,7 +90,7 @@ export default async function DestinationDetailPage({ params }: { params: Promis
               </div>
             </div>
 
-            <aside className="rounded-[2rem] border border-[#e8dfd2] bg-[#fffdf9] p-6 shadow-[0_12px_30px_rgba(27,34,31,0.05)]">
+            <aside className="self-start rounded-[2rem] border border-[#e8dfd2] bg-[#fffdf9] p-6 shadow-[0_12px_30px_rgba(27,34,31,0.05)]">
               <p className="text-xs uppercase tracking-[0.22em] text-[#2d665d]">Quick facts</p>
               <ul className="mt-6 space-y-4 text-sm text-[#485d58]">
                 <li className="flex items-center gap-3"><MapPin size={16} className="text-[#173c36]" /> {destination.country}</li>

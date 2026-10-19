@@ -15,6 +15,7 @@ export default function ExperienceCard({ experience }: { experience: Experience 
         <span className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] backdrop-blur-sm">
           {experience.category}
         </span>
+        <p className="mt-3 text-xs font-semibold text-white/90">{experience.countries.join(" · ")}</p>
         <h3 className="mt-5 font-serif text-3xl">{experience.title}</h3>
         <p className="mt-3 max-w-md text-sm leading-7 text-white/75">{experience.description}</p>
         <Link href="/experiences" className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-white">

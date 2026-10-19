@@ -13,7 +13,7 @@ export default function GalleryPage() {
         <PageHero
           eyebrow="The East African collection"
           title="Travel stories in motion"
-          description="An editorial collection of beaches, wildlife, culture, hotels and unforgettable landscapes."
+          description="Explore destination-specific wildlife, coast and culture across Kenya, Tanzania, Rwanda and Uganda."
           image={galleryImages[0].image}
           imageAlt={galleryImages[0].title}
         />

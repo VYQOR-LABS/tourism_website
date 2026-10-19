@@ -15,8 +15,8 @@ export default function DestinationsPage() {
         <section className="relative flex min-h-[420px] items-center overflow-hidden bg-[#0f221f] text-white sm:min-h-[500px]">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80"
-              alt="Mountain landscape"
+              src="/maasai-mara-acacia.jpg"
+              alt="Savannah landscape in Kenya's Maasai Mara"
               fill
               className="object-cover opacity-70"
               priority
@@ -28,25 +28,21 @@ export default function DestinationsPage() {
             <h1 className="mx-auto mt-6 max-w-3xl font-serif text-5xl leading-none sm:text-6xl">Discover Your Next Destination</h1>
             <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-white/80">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-2"><MapPinned size={14} /> Kenya</span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-2"><Sparkles size={14} /> Safari</span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-2"><CalendarDays size={14} /> Best in season</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-2"><MapPinned size={14} /> Tanzania</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-2"><MapPinned size={14} /> Uganda</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-2"><MapPinned size={14} /> Rwanda</span>
             </div>
           </Container>
         </section>
 
         <section className="py-20">
           <Container>
-            <SectionHeading title="Find the right destination for your next escape" description="Choose a region, travel style and pace that matches the kind of journey you want to have. Indicative starting prices are shown in KES and should be confirmed before booking." />
+            <SectionHeading title="East Africa, covered across four unforgettable countries" description="At Safariman Expeditions, we bring you closer to the destinations that define the spirit of Africa. Whether you are a wildlife lover, beach seeker, cultural explorer or mountain adventurer, our curated destinations promise journeys filled with depth and discovery." />
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {destinations.map((destination) => (
                 <article key={destination.id} className="overflow-hidden rounded-[1.8rem] border border-[#ebdfd3] bg-white shadow-[0_14px_30px_rgba(16,28,25,0.06)]">
                   <div className="relative h-64">
                     <Image src={destination.image} alt={destination.imageAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-                    {destination.imageCredit && destination.imageCreditUrl && (
-                      <a href={destination.imageCreditUrl} target="_blank" rel="noreferrer" className="absolute bottom-2 right-3 z-10 rounded bg-black/45 px-2 py-1 text-[10px] text-white/85 underline underline-offset-2">
-                        {destination.imageCredit}
-                      </a>
-                    )}
                   </div>
                   <div className="space-y-4 p-6">
                     <div className="flex items-center justify-between gap-3">

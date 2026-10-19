@@ -14,22 +14,32 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1d1a]/80 via-[#0a1d1a]/35 to-[#0a1d1a]/10" />
+        <div className="absolute inset-0 bg-[#071b17]/45" />
       </div>
 
-      <div className="relative flex min-h-[760px] w-full items-end px-4 pb-12 pt-28 sm:px-6 lg:px-8">
-        <div className="max-w-2xl text-white">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/8 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.26em] text-[#f7eee2] backdrop-blur-sm">
+      <div className="relative flex min-h-[600px] w-full items-center justify-center px-4 pb-10 pt-24 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl text-white">
+          <div className="mb-6 inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-[#10251f]/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#f7eee2] backdrop-blur-sm">
             <MapPinned size={12} />
             Discover Africa differently
           </div>
-          <h1 className="font-serif text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="mx-auto max-w-4xl font-serif text-5xl font-bold leading-[1.02] [text-shadow:0_2px_14px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl">
             Journeys Worth Remembering.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-8 text-white/80 sm:text-lg">
-            Discover breathtaking destinations, authentic experiences and unforgettable adventures across East Africa.
+          <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.75)] sm:text-xl">
+            Discover breathtaking destinations, authentic experiences and unforgettable adventures across Kenya, Tanzania, Rwanda and Uganda.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-5">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#f1d8a6] [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">Tours in</p>
+            <div className="mt-3 flex flex-wrap justify-center gap-2">
+              {["Kenya", "Tanzania", "Rwanda", "Uganda"].map((country) => (
+                <span key={country} className="rounded-full border border-white/60 bg-[#132d27]/90 px-4 py-2 text-sm font-bold text-white backdrop-blur-sm">
+                  {country}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button href="/destinations" variant="primary">Explore Destinations</Button>
             <Button href="/booking" variant="secondary">Plan Your Trip</Button>
           </div>

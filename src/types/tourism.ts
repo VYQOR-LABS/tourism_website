@@ -47,6 +47,7 @@ export interface Experience {
   image: string;
   category: string;
   blurb: string;
+  countries: string[];
 }
 
 export interface Accommodation {
@@ -66,6 +67,7 @@ export interface GalleryImage {
   id: string;
   title: string;
   category: "Safari" | "Beach" | "Culture" | "Adventure" | "Accommodation" | "Food" | "Nature";
+  country: "Kenya" | "Tanzania" | "Rwanda" | "Uganda";
   image: string;
 }
 

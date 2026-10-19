@@ -1,6 +1,13 @@
 import Container from "@/components/ui/container";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "Privacy Policy",
+  description: "Read how Safariman Expeditions handles personal information submitted through its travel inquiry forms.",
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (

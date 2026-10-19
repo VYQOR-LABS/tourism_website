@@ -5,9 +5,11 @@ import { notFound } from "next/navigation";
 import { destinations } from "@/data/destinations";
 import { tours } from "@/data/tours";
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/json-ld";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import Container from "@/components/ui/container";
+import { getPageMetadata, SITE_URL } from "@/lib/seo";
 
 export function generateStaticParams() {
   return destinations.map((destination) => ({ slug: destination.slug }));
@@ -17,10 +19,18 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const destination = destinations.find((item) => item.slug === slug);
 
-    return {
-      title: destination ? `${destination.name} | Travel Guide` : "Destination",
-      description: destination?.description ?? "Explore this destination.",
-    };
+    return destination
+      ? getPageMetadata({
+          title: `${destination.name}, ${destination.country}`,
+          description: destination.description,
+          path: `/destinations/${destination.slug}`,
+          image: destination.image,
+        })
+      : getPageMetadata({
+          title: "East Africa Destination",
+          description: "Explore destinations across Kenya, Tanzania, Rwanda and Uganda.",
+          path: "/destinations",
+        });
   });
 }
 
@@ -38,6 +48,17 @@ export default async function DestinationDetailPage({ params }: { params: Promis
     <>
       <Navbar />
       <main>
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "TouristDestination",
+            name: destination.name,
+            description: destination.description,
+            image: destination.image,
+            containedInPlace: { "@type": "Country", name: destination.country },
+            url: `${SITE_URL}/destinations/${destination.slug}`,
+          }}
+        />
         <section className="relative flex min-h-[420px] items-center overflow-hidden sm:min-h-[500px]">
           <div className="absolute inset-0">
               <Image src={destination.image} alt={destination.imageAlt} fill className="object-cover" priority sizes="100vw" />

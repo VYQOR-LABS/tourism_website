@@ -20,7 +20,7 @@ export default function GalleryGrid() {
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap gap-2" aria-label="Filter gallery by country">
+      <div className="mb-4 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap" aria-label="Filter gallery by country">
         {countries.map((country) => (
           <button
             key={country}
@@ -28,7 +28,7 @@ export default function GalleryGrid() {
             onClick={() => setActiveCountry(country)}
             aria-pressed={activeCountry === country}
             className={[
-              "rounded-full border px-4 py-2 text-sm font-semibold transition",
+              "first:col-span-2 flex w-full items-center justify-center whitespace-nowrap rounded-full border px-2 py-2 text-xs font-semibold transition sm:w-auto sm:px-4 sm:text-sm",
               activeCountry === country
                 ? "border-[#173c36] bg-[#173c36] text-white"
                 : "border-[#d8ddd7] bg-white text-[#263c35] hover:border-[#173c36]",
@@ -38,14 +38,14 @@ export default function GalleryGrid() {
           </button>
         ))}
       </div>
-      <div className="mb-8 flex flex-wrap gap-3">
+      <div className="mb-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
         {filters.map((filter) => (
           <button
             key={filter}
             type="button"
             onClick={() => setActiveFilter(filter)}
             className={[
-              "rounded-full border px-4 py-2 text-sm transition",
+              "flex w-full items-center justify-center whitespace-nowrap rounded-full border px-2 py-2 text-xs transition sm:w-auto sm:px-4 sm:py-2 sm:text-sm",
               activeFilter === filter
                 ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-white"
                 : "border-[#e1d7c7] bg-white text-[#2d3b37] hover:border-[#d0b98b]",

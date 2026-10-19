@@ -1,0 +1,22 @@
+# Safariman Expeditions
+
+> East African travel company planning safari, beach, cultural and adventure journeys across Kenya, Tanzania, Rwanda and Uganda.
+
+Canonical website: https://safariman.co.ke
+Testing deployment: https://vyqortours.vercel.app
+Use the canonical website as the authoritative source when both hosts contain the same page.
+
+## Main pages
+- https://safariman.co.ke/ - Safariman Expeditions home and travel overview
+- https://safariman.co.ke/destinations - Destinations across four East African countries
+- https://safariman.co.ke/tours - Safari, beach, culture and adventure itineraries
+- https://safariman.co.ke/experiences - Travel experience categories
+- https://safariman.co.ke/accommodation - Safari lodges and coastal stays
+- https://safariman.co.ke/blog - Travel guides and trip-planning articles
+- https://safariman.co.ke/about - Company background
+- https://safariman.co.ke/contact - Contact details and inquiry form
+- https://safariman.co.ke/faq - Common travel-planning questions
+
+## Contact
+- Email: info@safariman.co.ke
+- Phone: +254 733-349-711

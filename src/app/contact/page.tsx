@@ -4,6 +4,13 @@ import Container from "@/components/ui/container";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import ContactForm from "@/components/contact/contact-form";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "Contact Our East Africa Travel Team",
+  description: "Contact our East Africa travel team to discuss safari, beach, cultural and adventure itineraries.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

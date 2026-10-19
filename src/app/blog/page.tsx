@@ -4,6 +4,13 @@ import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import BlogCard from "@/components/blog/blog-card";
 import { blogPosts } from "@/data/blog";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "East Africa Travel Guides & Safari Advice",
+  description: "Read practical guides to Kenya safaris, East African destinations, wildlife, culture and trip planning.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

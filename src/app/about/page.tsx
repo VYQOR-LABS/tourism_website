@@ -5,6 +5,13 @@ import SectionHeading from "@/components/ui/section-heading";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import Button from "@/components/ui/button";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "About Our East Africa Travel Team",
+  description: "Meet the East African travel team creating thoughtful safaris, cultural journeys and beach escapes across the region.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

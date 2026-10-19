@@ -1,6 +1,13 @@
 import Container from "@/components/ui/container";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "Terms & Conditions",
+  description: "Review the terms and travel-planning information for Safariman Expeditions.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

@@ -4,6 +4,13 @@ import PageHero from "@/components/hero/page-hero";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import { experiences } from "@/data/experiences";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "Safari, Beach, Culture & Adventure Experiences",
+  description: "Find wildlife safaris, Indian Ocean escapes, cultural encounters and outdoor adventures across East Africa.",
+  path: "/experiences",
+});
 
 export default function ExperiencesPage() {
   return (

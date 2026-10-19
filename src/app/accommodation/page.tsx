@@ -4,6 +4,13 @@ import PageHero from "@/components/hero/page-hero";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import { accommodation } from "@/data/accommodation";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "Safari Lodges & Beach Stays in East Africa",
+  description: "Explore safari lodges, coastal resorts and distinctive stays across Kenya, Tanzania, Rwanda and Uganda.",
+  path: "/accommodation",
+});
 
 export default function AccommodationPage() {
   return (

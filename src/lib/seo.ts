@@ -1,33 +1,39 @@
 import type { Metadata } from "next";
 
+export const SITE_URL = "https://safariman.co.ke";
+export const SITE_NAME = "Safariman Expeditions";
+const DEFAULT_SOCIAL_IMAGE = "/maasai-mara-acacia.jpg";
+
 export function getPageMetadata({
   title,
   description,
   path,
+  image = DEFAULT_SOCIAL_IMAGE,
+  type = "website",
 }: {
   title: string;
   description: string;
   path: string;
+  image?: string;
+  type?: "website" | "article";
 }): Metadata {
-  const baseUrl = "https://example.com";
+  const canonicalUrl = new URL(path, SITE_URL).toString();
 
   return {
     title,
     description,
     alternates: {
-      canonical: `${baseUrl}${path}`,
+      canonical: canonicalUrl,
     },
     openGraph: {
       title,
       description,
-      url: `${baseUrl}${path}`,
-      siteName: "Safari & Beyond",
-      type: "website",
+      url: canonicalUrl,
+      siteName: SITE_NAME,
+      type,
       images: [
         {
-          url: "/images/og-default.jpg",
-          width: 1200,
-          height: 630,
+          url: image,
           alt: title,
         },
       ],

@@ -4,6 +4,13 @@ import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import GalleryGrid from "@/components/gallery/gallery-grid";
 import { galleryImages } from "@/data/gallery";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "East Africa Safari & Travel Photo Gallery",
+  description: "View wildlife, landscapes, coastlines and cultural highlights from Kenya, Tanzania, Rwanda and Uganda.",
+  path: "/gallery",
+});
 
 export default function GalleryPage() {
   return (

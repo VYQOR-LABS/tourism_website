@@ -3,6 +3,13 @@ import Container from "@/components/ui/container";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import InquiryForm from "@/components/booking/inquiry-form";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "Plan an East Africa Safari or Tour",
+  description: "Tell Safariman Expeditions where you want to travel and what you would like to experience, and start planning your itinerary.",
+  path: "/booking",
+});
 
 export default function BookingPage() {
   return (

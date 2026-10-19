@@ -3,10 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Clock3, MapPin } from "lucide-react";
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/json-ld";
 import { tours } from "@/data/tours";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import Container from "@/components/ui/container";
+import { getPageMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.slug }));
@@ -16,10 +18,18 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const tour = tours.find((item) => item.slug === slug);
 
-    return {
-      title: tour ? `${tour.title} | Sample Tourism Package` : "Tour Package",
-      description: tour?.summary ?? "Explore this tour package.",
-    };
+    return tour
+      ? getPageMetadata({
+          title: tour.title,
+          description: tour.summary,
+          path: `/tours/${tour.slug}`,
+          image: tour.image,
+        })
+      : getPageMetadata({
+          title: "East Africa Tour Itinerary",
+          description: "Explore safari and travel itineraries across East Africa.",
+          path: "/tours",
+        });
   });
 }
 
@@ -35,6 +45,26 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
     <>
       <Navbar />
       <main>
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "TouristTrip",
+            name: tour.title,
+            description: tour.summary,
+            touristType: tour.category,
+            image: tour.image,
+            itinerary: {
+              "@type": "ItemList",
+              itemListElement: tour.itinerary.map((item, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: item,
+              })),
+            },
+            provider: { "@type": "TravelAgency", name: SITE_NAME, url: SITE_URL },
+            url: `${SITE_URL}/tours/${tour.slug}`,
+          }}
+        />
         <section className="relative flex min-h-[420px] items-center overflow-hidden sm:min-h-[500px]">
           <div className="absolute inset-0">
             <Image src={tour.image} alt={tour.imageAlt} fill className="object-cover" priority sizes="100vw" />

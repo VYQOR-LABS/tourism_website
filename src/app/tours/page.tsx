@@ -5,6 +5,13 @@ import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import TourCard from "@/components/tours/tour-card";
 import { tours } from "@/data/tours";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "East Africa Safari & Tour Itineraries",
+  description: "Explore safari, beach, culture and adventure itineraries in Kenya, Tanzania, Rwanda and Uganda.",
+  path: "/tours",
+});
 
 export default function ToursPage() {
   return (

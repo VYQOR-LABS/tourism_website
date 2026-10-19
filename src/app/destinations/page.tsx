@@ -6,6 +6,13 @@ import SectionHeading from "@/components/ui/section-heading";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import { destinations } from "@/data/destinations";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata({
+  title: "East Africa Safari Destinations",
+  description: "Discover safari parks, coastlines and cultural destinations in Kenya, Tanzania, Rwanda and Uganda.",
+  path: "/destinations",
+});
 
 export default function DestinationsPage() {
   return (

@@ -48,18 +48,9 @@ export default function InquiryForm() {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm font-medium text-[#2c3934]">
+        <label className="block text-sm font-medium text-[#2c3934] sm:col-span-2">
           Travelers
           <input name="travelers" type="number" min={1} max={30} required defaultValue={2} className="mt-2 w-full rounded-2xl border border-[#e4d7c0] bg-white px-4 py-3 outline-none" />
-        </label>
-        <label className="block text-sm font-medium text-[#2c3934]">
-          Budget range
-          <select name="budget" className="mt-2 w-full rounded-2xl border border-[#e4d7c0] bg-white px-4 py-3 outline-none">
-            <option>KES 65,000 - KES 130,000</option>
-            <option>KES 130,000 - KES 260,000</option>
-            <option>KES 260,000 - KES 520,000</option>
-            <option>KES 520,000+</option>
-          </select>
         </label>
       </div>
 

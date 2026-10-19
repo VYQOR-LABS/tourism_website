@@ -6,7 +6,6 @@ export interface BookingEmailData {
   destination: string;
   travelDate: string;
   travelers: string;
-  budget: string;
   message: string;
 }
 

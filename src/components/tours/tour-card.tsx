@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import type { TourPackage } from "@/types/tourism";
-import { formatCurrency } from "@/lib/utils";
 
 export default function TourCard({ tour }: { tour: TourPackage }) {
   return (
@@ -25,9 +24,8 @@ export default function TourCard({ tour }: { tour: TourPackage }) {
           <p className="mt-2 text-sm leading-6 text-[#53615d]">{tour.description}</p>
         </div>
 
-        <div className="flex items-center justify-between text-sm text-[#586d63]">
+        <div className="text-sm text-[#586d63]">
           <span>{tour.duration}</span>
-          <span className="font-semibold text-[#1f5145]">Indicative from {formatCurrency(tour.price)}</span>
         </div>
 
         <Link href={`/tours/${tour.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#173c36]">

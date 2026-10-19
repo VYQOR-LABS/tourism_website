@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Clock3, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { tours } from "@/data/tours";
-import { formatCurrency } from "@/lib/utils";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import Container from "@/components/ui/container";
@@ -107,14 +106,11 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
               </div>
 
               <p className="mt-10 rounded-2xl border border-[#e8dfd2] bg-[#fffdf9] p-5 text-sm leading-7 text-[#495d5a]">
-                This is a suggested sample, not a confirmed operator arrangement. Confirm driving times, accommodation, park fees, transport, meals, availability, final price and cancellation terms before booking. Wildlife sightings and optional activities are not guaranteed.
+                This is a suggested sample, not a confirmed operator arrangement. Confirm driving times, accommodation, transport, meals, availability and cancellation terms before booking. Wildlife sightings and optional activities are not guaranteed.
               </p>
             </div>
 
             <aside className="h-fit self-start rounded-[2rem] border border-[#e8dfd2] bg-[#fffdf9] p-6 shadow-[0_12px_30px_rgba(27,34,31,0.05)]">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#2d665d]">From</p>
-              <p className="mt-2 text-4xl font-semibold text-[#173c36]">{formatCurrency(tour.price)}</p>
-              <p className="mt-2 text-xs leading-5 text-[#68736c]">Indicative sample estimate; confirm the final quotation and availability.</p>
               <div className="mt-6 space-y-4 text-sm text-[#495d5a]">
                 <p>Destination: {tour.destination}</p>
                 <p>Duration: {tour.duration}</p>

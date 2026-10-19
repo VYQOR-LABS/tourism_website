@@ -74,7 +74,7 @@ const socials: Array<{ icon: "facebook" | "x" | "instagram" | "tripadvisor"; lab
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-[linear-gradient(180deg,#5a3321_0%,#2d1a12_100%)] text-[#f7ebd2]">
+    <footer className="mt-20 bg-[#670800] text-[#f7ebd2]">
       <Container className="py-16">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>

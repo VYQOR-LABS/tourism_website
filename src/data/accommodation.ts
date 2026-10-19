@@ -12,7 +12,6 @@ export const accommodation: Accommodation[] = [
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
     description: "A warm, elegant seaside retreat designed for relaxed beach days and sunset dinners.",
     amenities: ["Infinity pool", "Spa", "Private dining", "Ocean view"],
-    priceFrom: 41500,
   },
   {
     id: "savannah-lodge",
@@ -25,7 +24,6 @@ export const accommodation: Accommodation[] = [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
     description: "A refined safari base with panoramic views, thoughtful service and classic bush comfort.",
     amenities: ["Game drive access", "Open-air deck", "Bar", "Laundry service"],
-    priceFrom: 53200,
   },
   {
     id: "harbor-boutique",
@@ -38,7 +36,6 @@ export const accommodation: Accommodation[] = [
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
     description: "A stylish city stay blending Swahili design, comfort and an easy central location.",
     amenities: ["Rooftop terrace", "Breakfast", "Airport shuttle", "Gym"],
-    priceFrom: 32400,
   },
   {
     id: "peak-terrace",
@@ -51,7 +48,6 @@ export const accommodation: Accommodation[] = [
       "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1200&q=80",
     description: "A scenic mountain stay featuring cool air, elevated views and restful outdoor spaces.",
     amenities: ["Fireplace lounge", "Guided treks", "Café", "Wellness deck"],
-    priceFrom: 46700,
   },
   {
     id: "serengeti-camp",
@@ -63,7 +59,6 @@ export const accommodation: Accommodation[] = [
     image: "/serengeti-sunrise.jpg",
     description: "A sample safari-camp stay framed around early game drives and open views across the Serengeti.",
     amenities: ["Game-drive access", "Dining tent", "Guided drives", "Campfire area"],
-    priceFrom: 59800,
   },
   {
     id: "bwindi-forest-lodge",
@@ -75,7 +70,6 @@ export const accommodation: Accommodation[] = [
     image: "/bwindi-mountain-gorilla.jpg",
     description: "A sample forest-side base for confirmed gorilla trekking permits and guided visits in Bwindi.",
     amenities: ["Trek briefing support", "Forest views", "Dining", "Transfer coordination"],
-    priceFrom: 64200,
   },
   {
     id: "volcanoes-lodge",
@@ -87,6 +81,5 @@ export const accommodation: Accommodation[] = [
     image: "/volcanoes-rwanda-gorilla.jpg",
     description: "A sample highland lodge base for guided park visits and gorilla trekking with confirmed permits.",
     amenities: ["Mountain views", "Trek briefing support", "Dining", "Transfer coordination"],
-    priceFrom: 71900,
   },
 ];

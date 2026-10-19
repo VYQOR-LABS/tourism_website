@@ -36,7 +36,7 @@ export default function AboutPage() {
             <div className="rounded-[1.8rem] border border-[#e6dac6] bg-[#fffdf9] p-6 shadow-[0_16px_40px_rgba(18,28,26,0.05)]">
               <p className="text-sm uppercase tracking-[0.2em] text-[#2d665d]">Our mission</p>
               <p className="mt-4 text-base leading-8 text-[#455a56]">
-                Our team of seasoned local experts understands this region intimately. From luxury fly-in safaris to family-friendly adventures and budget-friendly group tours, we create experiences that match your vision and respect your budget.
+                Our team of seasoned local experts understands this region intimately. From luxury fly-in safaris to family-friendly adventures and small-group tours, we create experiences shaped around your travel style.
               </p>
             </div>
           </Container>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Destination } from "@/types/tourism";
-import { formatCurrency } from "@/lib/utils";
 
 export default function DestinationCard({ destination }: { destination: Destination }) {
   return (
@@ -32,7 +31,6 @@ export default function DestinationCard({ destination }: { destination: Destinat
         <p className="text-sm leading-7 text-[#4d564f]">{destination.description}</p>
 
         <div className="flex items-center justify-between pt-1">
-          <span className="text-sm font-medium text-[#536b61]">From {formatCurrency(destination.priceFrom)}</span>
           <Link href={`/destinations/${destination.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#173c36]">
             Explore <ArrowRight size={15} />
           </Link>

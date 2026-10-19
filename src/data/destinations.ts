@@ -22,7 +22,6 @@ export const destinations: Destination[] = [
     bestTime: "July to October",
     averageStay: "3-4 days",
     idealFor: ["Wildlife lovers", "Photographers", "Adventure"],
-    priceFrom: 79200,
   },
   {
     id: "amboseli",
@@ -45,7 +44,6 @@ export const destinations: Destination[] = [
     bestTime: "June to October",
     averageStay: "2-3 days",
     idealFor: ["Wildlife", "Couples", "Scenic drives"],
-    priceFrom: 70100,
   },
   {
     id: "serengeti",
@@ -68,7 +66,6 @@ export const destinations: Destination[] = [
     bestTime: "June to October",
     averageStay: "4-5 days",
     idealFor: ["Safari travelers", "Wildlife lovers", "Adventure groups"],
-    priceFrom: 82000,
   },
   {
     id: "zanzibar",
@@ -91,7 +88,6 @@ export const destinations: Destination[] = [
     bestTime: "June to October",
     averageStay: "4-7 days",
     idealFor: ["Luxury escapes", "Couples", "Island lovers"],
-    priceFrom: 71400,
   },
   {
     id: "bwindi",
@@ -114,7 +110,6 @@ export const destinations: Destination[] = [
     bestTime: "June to September",
     averageStay: "3-4 days",
     idealFor: ["Adventure seekers", "Wildlife photographers", "Nature lovers"],
-    priceFrom: 69000,
   },
   {
     id: "queen-elizabeth",
@@ -137,7 +132,6 @@ export const destinations: Destination[] = [
     bestTime: "June to September",
     averageStay: "3-4 days",
     idealFor: ["Safari travelers", "Birders", "Families"],
-    priceFrom: 62000,
   },
   {
     id: "volcanoes",
@@ -160,7 +154,6 @@ export const destinations: Destination[] = [
     bestTime: "June to September",
     averageStay: "3-4 days",
     idealFor: ["Adventure travelers", "Wildlife lovers", "Photographers"],
-    priceFrom: 71000,
   },
   {
     id: "akagera",
@@ -183,7 +176,6 @@ export const destinations: Destination[] = [
     bestTime: "June to September",
     averageStay: "2-3 days",
     idealFor: ["Safari travelers", "Weekend explorers", "Nature lovers"],
-    priceFrom: 54000,
   },
 ];
 

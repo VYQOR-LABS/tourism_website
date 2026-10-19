@@ -14,7 +14,6 @@ export interface Destination {
   bestTime: string;
   averageStay: string;
   idealFor: string[];
-  priceFrom: number;
 }
 
 export interface TourPackage {
@@ -24,7 +23,6 @@ export interface TourPackage {
   destination: string;
   region: string;
   duration: string;
-  price: number;
   image: string;
   imageAlt: string;
   description: string;
@@ -60,7 +58,6 @@ export interface Accommodation {
   image: string;
   description: string;
   amenities: string[];
-  priceFrom: number;
 }
 
 export interface GalleryImage {

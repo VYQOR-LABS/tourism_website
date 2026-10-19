@@ -25,7 +25,7 @@ export default function ToursPage() {
 
         <section className="py-20">
           <Container>
-            <SectionHeading title="Browse tours across four countries" description="Choose a sample safari, beach, culture or adventure itinerary in Kenya, Tanzania, Rwanda or Uganda. Prices and arrangements are indicative and must be confirmed with the operator." />
+            <SectionHeading title="Browse tours across four countries" description="Choose a sample safari, beach, culture or adventure itinerary in Kenya, Tanzania, Rwanda or Uganda." />
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
               {tours.map((tour) => (
                 <TourCard key={tour.id} tour={tour} />

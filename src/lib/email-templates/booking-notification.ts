@@ -9,7 +9,6 @@ const bookingRows = (data: BookingEmailData) =>
     ["Destination", data.destination],
     ["Travel date", data.travelDate || "Flexible"],
     ["Travelers", data.travelers],
-    ["Budget", data.budget],
   ]
     .map(
       ([label, value]) =>
@@ -31,7 +30,6 @@ export function bookingNotificationEmail(data: BookingEmailData) {
       `Destination: ${data.destination}`,
       `Travel date: ${data.travelDate || "Flexible"}`,
       `Travelers: ${data.travelers}`,
-      `Budget: ${data.budget}`,
       "Message:",
       data.message,
     ].join("\n"),

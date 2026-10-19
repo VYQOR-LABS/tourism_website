@@ -36,12 +36,7 @@ export default function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const progressRef = useRef<HTMLDivElement>(null);
-  const lastY = useRef(0);
-  const isOpenRef = useRef(false);
-
-  isOpenRef.current = isOpen;
 
   useEffect(() => {
     const onScroll = () => {
@@ -49,13 +44,6 @@ export default function SiteHeader() {
       const max = document.documentElement.scrollHeight - window.innerHeight;
 
       setIsScrolled(y > 24);
-
-      // Hide when scrolling down, reveal when scrolling up
-      if (!isOpenRef.current) {
-        if (y > lastY.current + 6 && y > 240) setIsHidden(true);
-        else if (y < lastY.current - 6 || y <= 240) setIsHidden(false);
-      }
-      lastY.current = y;
 
       if (progressRef.current) {
         progressRef.current.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
@@ -96,8 +84,7 @@ export default function SiteHeader() {
       <header
         className={[
           "sticky top-0 z-50 transition-[transform,background-color,box-shadow,border-color] duration-500 ease-out motion-reduce:transition-none",
-          isHidden ? "-translate-y-full" : "translate-y-0",
-          "border-b border-[#5a3321]/40 bg-[linear-gradient(180deg,#5a3321_0%,#2d1a12_100%)] shadow-[0_8px_30px_rgba(35,17,9,0.28)]",
+          "border-b border-[#670800]/40 bg-[#670800] shadow-[0_8px_30px_rgba(35,17,9,0.28)]",
         ].join(" ")}
       >
         <Container>

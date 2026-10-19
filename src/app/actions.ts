@@ -30,7 +30,6 @@ export async function submitBooking(_previousState: FormActionState, formData: F
     destination: readString(formData, "destination"),
     travelDate: readString(formData, "travelDate"),
     travelers: readString(formData, "travelers"),
-    budget: readString(formData, "budget"),
     message: readString(formData, "message"),
   };
 

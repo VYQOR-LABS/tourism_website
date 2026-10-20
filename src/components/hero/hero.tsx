@@ -14,10 +14,10 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#071b17]/45" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,#670800_0%,rgba(103,8,0,0.72)_42%,transparent_100%)]" />
       </div>
 
-      <div className="relative flex min-h-[600px] w-full items-center justify-center px-4 pb-10 pt-24 text-center sm:px-6 lg:px-8">
+      <div className="relative flex min-h-[650px] w-full items-end justify-center px-4 pb-16 pt-24 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-white">
           <div className="mb-6 inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-[#10251f]/55 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#f7eee2] backdrop-blur-sm">
             <MapPinned size={12} />

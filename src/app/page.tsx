@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Compass, Headphones, MapPinned, ShieldCheck } from "lucide-react";
 import Navbar from "@/components/navigation/navbar";
 import Hero from "@/components/hero/hero";
-import SearchPanel from "@/components/home/search-panel";
 import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
 import SectionHeading from "@/components/ui/section-heading";
@@ -49,7 +48,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <SearchPanel />
 
         <section className="pb-20 pt-20">
           <Container>

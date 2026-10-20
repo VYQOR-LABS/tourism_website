@@ -36,7 +36,7 @@ export default function ContactPage() {
                 <h2 className="mt-4 font-serif text-4xl text-[#1a201d]">Talk to our travel team</h2>
               </div>
               <div className="space-y-3 text-sm leading-8 text-[#4e5854]">
-                <p><a href="tel:+254733349711" className="transition-colors hover:text-[#173c36]">+254 733-349-711</a></p>
+                <p><a href="tel:0737468278" className="transition-colors hover:text-[#173c36]">0737 468 278</a></p>
                 <p><a href="mailto:info@safariman.co.ke" className="transition-colors hover:text-[#173c36]">info@safariman.co.ke</a></p>
               </div>
               <div className="rounded-[1.8rem] border border-[#e7dac7] bg-[#fffdf9] p-5">

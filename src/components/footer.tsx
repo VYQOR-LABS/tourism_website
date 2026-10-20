@@ -125,7 +125,7 @@ export default function Footer() {
           <div>
             <h3 className="text-base font-semibold uppercase tracking-[0.22em] text-[#f3dca2]">Contact</h3>
             <div className="mt-5 space-y-3 text-[0.95rem] text-[#f7ebd2]/80">
-              <p><a href="tel:+254733349711" className="transition-colors hover:text-[#fff3d2]">+254 733-349-711</a></p>
+              <p><a href="tel:0737468278" className="transition-colors hover:text-[#fff3d2]">0737 468 278</a></p>
               <p><a href="mailto:info@safariman.co.ke" className="transition-colors hover:text-[#fff3d2]">info@safariman.co.ke</a></p>
             </div>
             <div className="mt-6">

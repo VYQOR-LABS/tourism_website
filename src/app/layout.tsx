@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         image: `${SITE_URL}/maasai-mara-acacia.jpg`,
         description:
           "East African travel company creating safari, beach, cultural and adventure journeys across Kenya, Tanzania, Rwanda and Uganda.",
-        telephone: "+254733349711",
+        telephone: "0737 468 278",
         email: "info@safariman.co.ke",
         areaServed: ["Kenya", "Tanzania", "Rwanda", "Uganda"].map((name) => ({
           "@type": "Country",

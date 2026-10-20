@@ -42,7 +42,7 @@ export default function ContactPage() {
               <div className="rounded-[1.8rem] border border-[#e7dac7] bg-[#fffdf9] p-5">
                 <p className="text-xs uppercase tracking-[0.2em] text-[#2d665d]">WhatsApp</p>
                 <a
-                  href="https://wa.me/254791614036?text=Hello%2C%20I%20would%20like%20to%20plan%20a%20trip."
+                  href="https://wa.me/254737468278?text=Hello%20Safariman%20Expeditions!%20I'm%20interested%20in%20planning%20a%20trip.%20Please%20share%20details%20about%20your%20available%20destinations,%20tour%20options,%20pricing,%20and%20what%20information%20you%20need%20from%20me%20to%20get%20started.%20Thank%20you."
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Chat with us on WhatsApp"

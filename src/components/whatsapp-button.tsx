@@ -1,7 +1,9 @@
 import { MessageCircle } from "lucide-react";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "254791614036";
-const whatsappMessage = encodeURIComponent("Hello, I would like to plan a trip.");
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "254737468278";
+const whatsappMessage = encodeURIComponent(
+  "Hello Safariman Expeditions! I'm interested in planning a trip. Please share details about your available destinations, tour options, pricing, and what information you need from me to get started. Thank you.",
+);
 
 export default function WhatsAppButton() {
   return (

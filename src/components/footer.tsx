@@ -51,6 +51,7 @@ function SocialIcon({ type }: { type: "facebook" | "x" | "instagram" | "tripadvi
 const footerLinks = [
   { label: "Destinations", href: "/destinations" },
   { label: "Tours", href: "/tours" },
+  { label: "Flights", href: "/flights" },
   { label: "Experiences", href: "/experiences" },
   { label: "Accommodation", href: "/accommodation" },
   { label: "Gallery", href: "/gallery" },

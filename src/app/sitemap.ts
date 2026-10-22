@@ -14,6 +14,7 @@ const staticRoutes = [
   "/destinations",
   "/experiences",
   "/faq",
+  "/flights",
   "/gallery",
   "/privacy-policy",
   "/terms",

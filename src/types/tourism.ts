@@ -52,11 +52,16 @@ export interface Accommodation {
   id: string;
   name: string;
   slug: string;
+  country: string;
   location: string;
   type: string;
-  rating: number;
   image: string;
+  imageAlt: string;
+  imageCredit?: string;
+  imageCreditUrl?: string;
   description: string;
+  startingRate?: string;
+  rateSource?: string;
   amenities: string[];
 }
 

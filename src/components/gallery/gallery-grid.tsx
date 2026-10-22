@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { galleryImages } from "@/data/gallery";
+import type { GalleryImage } from "@/types/tourism";
 
-export default function GalleryGrid() {
+export default function GalleryGrid({ images = galleryImages }: { images?: GalleryImage[] }) {
   return (
     <div>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {galleryImages.map((image) => (
+        {images.map((image) => (
           <figure key={image.id} className="group overflow-hidden rounded-[1.6rem] border border-[#efe3d9] bg-white shadow-sm">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image

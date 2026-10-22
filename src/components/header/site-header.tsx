@@ -11,6 +11,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Destinations", href: "/destinations" },
   { label: "Tours", href: "/tours" },
+  { label: "Flights", href: "/flights" },
   { label: "Experiences", href: "/experiences" },
   { label: "Accommodation", href: "/accommodation" },
   { label: "Gallery", href: "/gallery" },

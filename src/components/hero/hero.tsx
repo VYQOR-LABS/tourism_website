@@ -7,14 +7,14 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1600&q=80"
-          alt="African safari landscape at sunset"
+          src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=85"
+          alt="Bright tropical beach with turquoise water and palm trees"
           fill
           priority
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,#670800_0%,rgba(103,8,0,0.72)_42%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(103,8,0,0.5)_0%,rgba(103,8,0,0.22)_32%,transparent_100%)]" />
       </div>
 
       <div className="relative flex min-h-[650px] w-full items-end justify-center px-4 pb-16 pt-24 text-center sm:px-6 lg:px-8">

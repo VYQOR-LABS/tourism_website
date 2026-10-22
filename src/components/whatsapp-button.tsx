@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import WhatsAppIcon from "@/components/whatsapp-icon";
 
 const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "254737468278";
 const whatsappMessage = encodeURIComponent(
@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
       aria-label="Chat on WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_20px_40px_rgba(37,211,102,0.4)] transition hover:scale-105"
     >
-      <MessageCircle size={22} />
+      <WhatsAppIcon size={27} />
     </a>
   );
 }

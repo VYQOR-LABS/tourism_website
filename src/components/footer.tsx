@@ -63,7 +63,7 @@ const footerLinks = [
 const supportLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms", href: "/terms" },
+  { label: "Terms & Conditions", href: "/terms" },
 ];
 
 const socials: Array<{ icon: "facebook" | "x" | "instagram" | "tripadvisor"; label: string; href: string }> = [

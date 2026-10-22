@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
 import Container from "@/components/ui/container";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footer";
 import ContactForm from "@/components/contact/contact-form";
+import WhatsAppIcon from "@/components/whatsapp-icon";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata = getPageMetadata({
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   aria-label="Chat with us on WhatsApp"
                   className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#173c36] transition-colors hover:text-[#25a95a]"
                 >
-                  <MessageCircle size={18} aria-hidden="true" />
+                  <WhatsAppIcon size={18} />
                   Chat on WhatsApp
                 </a>
               </div>

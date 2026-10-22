@@ -19,10 +19,11 @@ export default function BookingPage() {
         <section className="relative flex min-h-[420px] items-center overflow-hidden sm:min-h-[500px]">
           <div className="absolute inset-0">
             <Image
-              src="/images/booking-hero.svg"
-              alt="Coastal travel destination"
+              src="/amboseli-elephants-kilimanjaro.jpg"
+              alt="Elephants crossing Amboseli with Mount Kilimanjaro in the background"
               fill
               priority
+              sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0d1d1a]/88 via-[#0d1d1a]/60 to-[#0d1d1a]/30" />

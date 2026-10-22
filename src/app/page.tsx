@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, Headphones, Mail, MapPinned, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, Compass, Headphones, Mail, MapPinned, Phone, ShieldCheck } from "lucide-react";
 import Navbar from "@/components/navigation/navbar";
 import Hero from "@/components/hero/hero";
 import Button from "@/components/ui/button";
@@ -10,15 +10,13 @@ import DestinationCard from "@/components/destinations/destination-card";
 import ExperienceCard from "@/components/experiences/experience-card";
 import TourCard from "@/components/tours/tour-card";
 import TestimonialsCarousel from "@/components/testimonials/testimonials-carousel";
-import BlogCard from "@/components/blog/blog-card";
-import Newsletter from "@/components/newsletter/newsletter";
 import Footer from "@/components/footer";
 import GalleryGrid from "@/components/gallery/gallery-grid";
 import WhatsAppButton from "@/components/whatsapp-button";
+import WhatsAppIcon from "@/components/whatsapp-icon";
 import { featuredDestinations } from "@/data/destinations";
 import { experiences } from "@/data/experiences";
 import { featuredTours } from "@/data/tours";
-import { featuredBlogPosts } from "@/data/blog";
 import { accommodation } from "@/data/accommodation";
 import { flightSafaris } from "@/data/flights";
 import { galleryImages } from "@/data/gallery";
@@ -219,37 +217,32 @@ export default function Home() {
 
         <TestimonialsCarousel />
 
-        <section className="bg-[#f5f0e9] py-20">
+        <section className="bg-[#f5f0e9] py-16 sm:py-20">
           <Container>
-            <SectionHeading eyebrow="Travel inspiration across four countries" title="Travel Inspiration" description="Plan for Kenya, Tanzania, Rwanda and Uganda with destination guides and practical advice." />
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {featuredBlogPosts.slice(0, 3).map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
-            </div>
-            <SeeMore href="/blog">See more travel guides</SeeMore>
-          </Container>
-        </section>
-
-        <section className="py-16">
-          <Container>
-            <div className="rounded-[2rem] bg-[#173c36] px-6 py-12 text-center text-white sm:px-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#e4d2ad]">Contact our local team</p>
-              <h2 className="mt-3 font-serif text-3xl sm:text-4xl">Ready to plan your East African journey?</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/75">Talk with us about destinations, dates, accommodation and the right itinerary for you.</p>
+            <div className="rounded-[2rem] border border-[#e7dac7] bg-[#fffdf9] px-6 py-10 text-center shadow-[0_16px_40px_rgba(38,52,43,0.06)] sm:px-10 sm:py-14">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8c6b3e]">Contact our local team</p>
+              <h2 className="mt-3 font-serif text-3xl text-[#173c36] sm:text-4xl">Ready to plan your East African journey?</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#52635b]">
+                Talk with us about destinations, dates, accommodation and the right itinerary for you.
+              </p>
               <div className="mt-7 flex flex-wrap justify-center gap-3">
-                <a href="tel:0737468278" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm hover:bg-white/10"><Phone size={15} /> Call us</a>
-                <a href="mailto:info@safariman.co.ke" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm hover:bg-white/10"><Mail size={15} /> Email us</a>
-                <a href="https://wa.me/254737468278" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm hover:bg-white/10"><MessageCircle size={15} /> WhatsApp</a>
+                <a href="tel:0737468278" className="inline-flex items-center gap-2 rounded-full border border-[#cbd7ce] px-5 py-3 text-sm font-semibold text-[#173c36] transition-colors hover:bg-[#edf3ef]">
+                  <Phone size={16} aria-hidden="true" /> Call us
+                </a>
+                <a href="mailto:info@safariman.co.ke" className="inline-flex items-center gap-2 rounded-full border border-[#cbd7ce] px-5 py-3 text-sm font-semibold text-[#173c36] transition-colors hover:bg-[#edf3ef]">
+                  <Mail size={16} aria-hidden="true" /> Email us
+                </a>
+                <a href="https://wa.me/254737468278" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#cbd7ce] px-5 py-3 text-sm font-semibold text-[#173c36] transition-colors hover:bg-[#edf3ef]">
+                  <WhatsAppIcon size={17} /> WhatsApp
+                </a>
               </div>
               <div className="mt-7">
-                <Button href="/contact" variant="secondary" className="!bg-[#f5d896] !text-[#2d1a12]">See more contact options</Button>
+                <Button href="/contact" variant="primary">See more contact options</Button>
               </div>
             </div>
           </Container>
         </section>
 
-        <Newsletter />
       </main>
       <Footer />
       <WhatsAppButton />

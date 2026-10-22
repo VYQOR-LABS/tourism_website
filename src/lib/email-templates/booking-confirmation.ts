@@ -1,14 +1,48 @@
-import { emailLayout, escapeHtml, type BookingEmailData } from "@/lib/email-templates/shared";
+import {
+  emailDetailsTable,
+  emailLayout,
+  escapeHtml,
+  formatEmailDetails,
+  type BookingEmailData,
+} from "@/lib/email-templates/shared";
 
 export function bookingConfirmationEmail(data: BookingEmailData) {
+  const rows: Array<[string, string]> = [
+    ["Destination", data.destination],
+    ["Travel date", data.travelDate || "Flexible / not specified"],
+    ["Travelers", data.travelers],
+    ["Phone", data.phone],
+    ["Country", data.country],
+  ];
+  const safeMessage = escapeHtml(data.message).replace(/\r?\n/g, "<br>");
+
   return {
-    subject: "We received your Safari & Beyond trip inquiry",
-    text: `Hello ${data.name},\n\nThank you for sharing your trip plans with us. Our travel team has received your inquiry for ${data.destination} and will be in touch soon.\n\nSafari & Beyond`,
+    subject: "We received your trip inquiry | Safariman Expeditions",
+    text: [
+      `Hello ${data.name},`,
+      "",
+      "Thank you for contacting Safariman Expeditions. We have received your trip inquiry. Our travel team will review your request and get back to you.",
+      "",
+      formatEmailDetails(rows),
+      "",
+      "Your message:",
+      data.message,
+      "",
+      "This email confirms receipt of your inquiry; it is not a booking confirmation.",
+      "You can reply to this email if you need to add any details.",
+      "",
+      "Safariman Expeditions",
+    ].join("\n"),
     html: emailLayout(
-      "Your journey starts here",
+      "We have received your trip inquiry",
       `<p style="margin:0 0 14px;line-height:1.7">Hello ${escapeHtml(data.name)},</p>
-       <p style="margin:0 0 14px;color:#52635d;line-height:1.7">Thank you for sharing your trip plans with us. We have received your inquiry for <strong>${escapeHtml(data.destination)}</strong> and our travel team will be in touch soon.</p>
-       <p style="margin:0;color:#52635d;line-height:1.7">You can reply to this email if there is anything else you would like us to know.</p>`,
+       <p style="margin:0 0 22px;color:#52635d;line-height:1.7">Thank you for contacting Safariman Expeditions. Our travel team has received your request and will review the details before getting back to you.</p>
+       <h2 style="margin:0 0 12px;font-size:17px;color:#173c36">Your inquiry summary</h2>
+       ${emailDetailsTable(rows)}
+       <h2 style="margin:26px 0 10px;font-size:17px;color:#173c36">Your message</h2>
+       <div style="padding:16px 18px;border-left:3px solid #d4a75f;background:#f8f5ef;color:#40524b;line-height:1.7">${safeMessage}</div>
+       <p style="margin:22px 0 0;color:#66736f;font-size:13px;line-height:1.7"><strong>Note:</strong> This email confirms receipt of your inquiry; it is not a booking confirmation. Reply to this email if you would like to add details.</p>`,
+      "We received your Safariman Expeditions trip inquiry",
     ),
   };
 }

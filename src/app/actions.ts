@@ -2,9 +2,11 @@
 
 import { bookingConfirmationEmail } from "@/lib/email-templates/booking-confirmation";
 import { bookingNotificationEmail } from "@/lib/email-templates/booking-notification";
+import { contactConfirmationEmail } from "@/lib/email-templates/contact-confirmation";
+import { contactNotificationEmail } from "@/lib/email-templates/contact-notification";
 import { newsletterNotificationEmail } from "@/lib/email-templates/newsletter-notification";
 import { newsletterWelcomeEmail } from "@/lib/email-templates/newsletter-welcome";
-import type { BookingEmailData } from "@/lib/email-templates/shared";
+import type { BookingEmailData, ContactEmailData } from "@/lib/email-templates/shared";
 import { getContactInbox, sendEmail } from "@/lib/mailer";
 import type { FormActionState } from "@/types/form-action";
 
@@ -73,6 +75,53 @@ export async function submitBooking(_previousState: FormActionState, formData: F
   } catch {
     console.error("Booking inquiry email could not be sent.");
     return { status: "error", message: "We could not send your inquiry. Please try again or contact us directly." };
+  }
+}
+
+export async function submitContact(_previousState: FormActionState, formData: FormData): Promise<FormActionState> {
+  if (readString(formData, "website")) {
+    return { status: "success", message: "Thank you. Your message has been received." };
+  }
+
+  const data: ContactEmailData = {
+    name: readString(formData, "name"),
+    email: readString(formData, "email"),
+    phone: readString(formData, "phone"),
+    subject: readString(formData, "subject"),
+    message: readString(formData, "message"),
+  };
+
+  if (!data.name || data.name.length > 120) {
+    return { status: "error", message: "Enter your name (up to 120 characters)." };
+  }
+  if (!isValidEmail(data.email)) {
+    return { status: "error", message: "Enter a valid email address." };
+  }
+  if (data.phone.length > 60) {
+    return { status: "error", message: "Check the phone field, then try again." };
+  }
+  if (!data.subject || data.subject.length > 160) {
+    return { status: "error", message: "Enter a subject (up to 160 characters)." };
+  }
+  if (data.message.length < 5 || data.message.length > 5000) {
+    return { status: "error", message: "Your message must be between 5 and 5,000 characters." };
+  }
+
+  try {
+    const notification = contactNotificationEmail(data);
+    await sendEmail({
+      to: getContactInbox(),
+      replyTo: data.email,
+      ...notification,
+    });
+
+    const confirmation = contactConfirmationEmail(data);
+    await sendEmail({ to: data.email, ...confirmation });
+
+    return { status: "success", message: "Your message has been sent. We will be in touch soon." };
+  } catch {
+    console.error("Contact form email could not be sent.");
+    return { status: "error", message: "We could not send your message. Please try again or contact us directly." };
   }
 }
 

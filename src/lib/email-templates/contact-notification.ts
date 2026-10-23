@@ -1,4 +1,5 @@
 import {
+  EMAIL_COLORS,
   emailDetailsTable,
   emailLayout,
   escapeHtml,
@@ -29,10 +30,10 @@ export function contactNotificationEmail(data: ContactEmailData) {
     ].join("\n"),
     html: emailLayout(
       "New contact message",
-      `<p style="margin:0 0 20px;color:#52635d;line-height:1.7">A visitor submitted a message through the website contact form. Reply to this email to respond directly.</p>
+      `<p style="margin:0 0 20px;color:${EMAIL_COLORS.muted};line-height:1.7">A visitor submitted a message through the website contact form. Reply to this email to respond directly.</p>
        ${emailDetailsTable(rows)}
-       <h2 style="margin:26px 0 10px;font-size:17px;color:#173c36">Message</h2>
-       <div style="padding:16px 18px;border-left:3px solid #d4a75f;background:#f8f5ef;color:#40524b;line-height:1.7">${safeMessage}</div>`,
+       <h2 style="margin:26px 0 10px;font-size:17px;color:${EMAIL_COLORS.primary}">Message</h2>
+       <div style="padding:16px 18px;border-left:3px solid ${EMAIL_COLORS.secondary};background:${EMAIL_COLORS.panel};color:${EMAIL_COLORS.foreground};line-height:1.7">${safeMessage}</div>`,
       `New contact message from ${data.name}: ${data.subject}`,
     ),
   };

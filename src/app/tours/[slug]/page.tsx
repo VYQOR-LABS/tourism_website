@@ -146,7 +146,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
                 <p>Duration: {tour.duration}</p>
                 <p>Category: {tour.category}</p>
               </div>
-              <Link href="/booking" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-medium text-white">
+              <Link href={`/tours/${tour.slug}/booking`} className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-medium text-white">
                 Request This Trip <ArrowRight size={15} />
               </Link>
             </aside>

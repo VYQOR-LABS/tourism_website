@@ -9,10 +9,10 @@ export default function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContact, initialFormActionState);
 
   return (
-    <form action={formAction} className="space-y-5 rounded-[2rem] border border-[#e9dfd1] bg-[#fffdf9] p-6 shadow-[0_18px_44px_rgba(19,25,21,0.05)] sm:p-8">
+    <form action={formAction} aria-busy={isPending} className="space-y-5 rounded-[2rem] border border-[#e9dfd1] bg-[#fffdf9] p-6 shadow-[0_18px_44px_rgba(19,25,21,0.05)] sm:p-8">
       <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
         <label htmlFor="contact-website">Leave this field empty</label>
-        <input id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
+        <input id="contact-website" name="formCheck" tabIndex={-1} autoComplete="off" />
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium text-[#2c3934]">
@@ -46,6 +46,7 @@ export default function ContactForm() {
           {state.message}
         </p>
       ) : null}
+      {isPending ? <p role="status" aria-live="polite" className="text-sm text-[#586a64]">Sending your message...</p> : null}
       <Button type="submit" disabled={isPending} className="w-full justify-center">
         {isPending ? "Sending..." : "Send message"}
       </Button>

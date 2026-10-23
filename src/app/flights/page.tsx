@@ -102,7 +102,7 @@ export default function FlightsPage() {
                       {safari.flightBudget ? <p className="mt-3 text-xs leading-6 text-[#53615d]">Indicative flight budget: {safari.flightBudget}</p> : null}
                     </div>
 
-                    <Button href="/booking" variant="primary" className="w-full justify-center">
+                    <Button href={`/booking?flight=${safari.id}`} variant="primary" className="w-full justify-center">
                       Ask about this itinerary <ArrowRight size={16} />
                     </Button>
                   </div>

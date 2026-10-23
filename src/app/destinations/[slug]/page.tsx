@@ -118,7 +118,7 @@ export default async function DestinationDetailPage({ params }: { params: Promis
                 <li className="flex items-center gap-3"><Clock3 size={16} className="text-[#173c36]" /> {destination.averageStay}</li>
                 <li className="flex items-center gap-3"><Sparkles size={16} className="text-[#173c36]" /> Ideal for {destination.idealFor.join(", ")}</li>
               </ul>
-              <Link href="/booking" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-medium text-white">
+              <Link href={`/destinations/${destination.slug}/booking`} className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-5 py-3 text-sm font-medium text-white">
                 Plan a trip to {destination.name} <ArrowRight size={15} />
               </Link>
             </aside>

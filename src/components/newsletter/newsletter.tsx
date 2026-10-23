@@ -23,7 +23,7 @@ export default function Newsletter() {
         <form action={formAction} className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row">
           <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
             <label htmlFor="newsletter-website">Leave this field empty</label>
-            <input id="newsletter-website" name="website" tabIndex={-1} autoComplete="off" />
+            <input id="newsletter-website" name="formCheck" tabIndex={-1} autoComplete="off" />
           </div>
           <label className="flex flex-1 items-center gap-3 rounded-full border border-[#e1d7c7] bg-[#f9f5f0] px-4 py-3 text-left">
             <Mail size={18} className="text-[#59786f]" />
